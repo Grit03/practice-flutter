@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:toonflix/widgets/button.dart';
 
 void main() {
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
+  const App({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -46,7 +49,7 @@ class App extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Column(
@@ -59,7 +62,7 @@ class App extends StatelessWidget {
                       fontSize: 22,
                     ),
                   ),
-                  Text(
+                  const Text(
                     "\$5 194 382",
                     style: TextStyle(
                       color: Colors.white,
@@ -67,24 +70,22 @@ class App extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Row(
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Color(0xFFF2B33A),
-                          borderRadius: BorderRadius.circular(45),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 50,
-                            vertical: 20,
-                          ),
-                          child: Text("Transfer"),
-                        ),
-                      )
+                      Button(
+                        text: "Transfer",
+                        bgColor: Color(0xFFF2B33A),
+                        textColor: Colors.black,
+                      ),
+                      Button(
+                        text: "Request",
+                        bgColor: Color(0xFF1F2123),
+                        textColor: Colors.white,
+                      ),
                     ],
                   )
                 ],
